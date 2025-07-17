@@ -1,6 +1,7 @@
 const ColorValue = document.getElementById("ColorValue");
 const ColorMode = document.getElementById("ColorMode");
 const GetColorBtn = document.getElementById("GetColorBtn");
+const colorContainer = document.getElementById("colorContainer");
 
 GetColorBtn.addEventListener("click", () => {
   fetch(
@@ -11,6 +12,14 @@ GetColorBtn.addEventListener("click", () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      colorContainer.innerHTML = "";
+
+      data.colors.forEach((color) => {
+        const box = document.createElement("div");
+        box.className = "colorBox";
+        box.style.backgroundColor = color.hex.value;
+        box.innerText = color.hex.value;
+        colorContainer.appendChild(box);
+      });
     });
 });

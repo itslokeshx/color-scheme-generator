@@ -2,20 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="100x100"
-      href="https://www.transparentpng.com/thumb/anonymous-mask/anonymous-mask-icon-png-25.png"
-      alt="anonymous mask icon png @transparentpng.com"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color-Scheme-Generator</title>
+    <title>Color Scheme Generator</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="colorSelection">
+    <div class="wrapper">
+      <div class="controls">
         <input type="color" id="ColorValue" />
         <select id="ColorMode">
           <option>monochrome</option>
@@ -27,11 +20,11 @@
           <option>triad</option>
           <option>quad</option>
         </select>
-
-        <button id="GetColorBtn">Get Color Scheme</button>
+        <button id="GetColorBtn">Get color scheme</button>
       </div>
-    </div>
 
+      <div id="colorContainer" class="color-display"></div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
